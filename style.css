@@ -1,0 +1,662 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #1f242d;
+  color: #ffffff;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* NAVIGATION */
+nav {
+  background: #1f242d;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0ef;
+}
+
+/* Desktop Links (Visible by default) */
+nav .links {
+  display: flex;
+  gap: 30px;
+}
+
+.link a {
+  font-size: 18px;
+  color: #fff;
+  position: relative;
+}
+
+.link a::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  background: #0ef;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease;
+}
+
+.link a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger Icon (Hidden by default on Desktop) */
+.hamburg {
+  display: none !important;
+  font-size: 24px;
+  color: #0ef;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  /* Hide desktop navigation links */
+  nav .links {
+    display: none;
+  }
+
+  /* Show hamburger icon ONLY on mobile */
+  .hamburg {
+    display: block !important;
+  }
+
+  /* New or modified styles for nav and its internal structure on mobile */
+  nav {
+    justify-content: space-between;
+    padding: 20px 5%;
+  }
+
+  /* This is crucial: adjust how the new-container inside nav behaves */
+  nav .new-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Adjust dropdown menu styling for mobile */
+  .dropdwon {
+    position: static;
+    background: #1f242d;
+    box-shadow: none;
+    text-align: right;
+  }
+
+  .dropdwon .links {
+    padding-right: 5%;
+    align-items: flex-end;
+  }
+
+  /* ... rest of your media query styles (main-container, about, skills-details etc.) ... */
+  /* Base styles */
+  .main-container,
+  .about,
+  .skills-details {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .main-container,
+    .about,
+    .skills-details {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .main-container .image,
+    .about img {
+      margin-bottom: 20px;
+    }
+
+    .skills-details .text {
+      margin-bottom: 30px;
+    }
+  }
+
+  .main-container .image,
+  .about img {
+    margin-bottom: 20px;
+  }
+
+  .skills-details .text {
+    margin-bottom: 30px;
+  }
+}
+
+/* Dropdown Menu (Hidden by default on Desktop) */
+.dropdwon {
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1f242d;
+  padding: 10px 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdwon .links {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10%;
+}
+
+.dropdwon .links a {
+  display: block;
+  margin: 10px 0;
+  color: #0ef;
+}
+
+/* MAIN SECTION */
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.image img {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #0ef;
+}
+
+.content {
+  max-width: 600px;
+  flex: 1;
+}
+
+.content h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  animation: slideLeft 1s ease forwards;
+}
+
+.content h1 span {
+  color: #0ef;
+}
+
+.typewriter {
+  font-size: 20px;
+  color: #0ef;
+  margin-bottom: 15px;
+  height: 24px;
+}
+
+.content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.social-icons i {
+  font-size: 24px;
+  margin-right: 10px;
+  transition: color 0.3s;
+}
+
+.social-icons i:hover {
+  color: #0ef;
+}
+
+.btn button {
+  padding: 12px 30px;
+  background-color: #0ef;
+  color: #1f242d;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.btn button:hover {
+  background: transparent;
+  color: #0ef;
+  border: 2px solid #0ef;
+}
+
+/* ABOUT SECTION */
+.about {
+  background: #1f242d;
+  padding: 60px 10%;
+  /* No display: flex; here */
+}
+
+/* Styles for the container holding the image and text */
+.about .about-details {
+  display: flex; /* Make it a flex container */
+  flex-direction: column; /* THIS IS THE KEY CHANGE: Stack items vertically */
+  align-items: center; /* Center items horizontally within the column (image will be centered) */
+  gap: 30px; /* Space between the image (.left) and the text content (.right) */
+  /* flex-wrap and justify-content are less critical here since it's a column */
+}
+
+/* Styles for the left div containing the image */
+.about .about-details .left {
+  /* No specific styles needed here, its content (the image) will be centered by parent */
+  width: 100%; /* Allows the image to center within its container if it's smaller */
+  text-align: center; /* Ensures the image itself is horizontally centered within .left if .left is wider than the image */
+}
+
+.about .about-details .left img {
+  width: 280px; /* Fixed width for the image */
+  max-width: 100%; /* Ensures the image doesn't exceed its parent's width */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 10px; /* Slightly rounded corners for the image */
+  object-fit: cover;
+  display: block; /* Important for centering block elements with margin: auto */
+  margin: 0 auto; /* Centers the image horizontally */
+}
+
+/* Styles for the right div containing all the text content */
+.about .about-details .right {
+  /* This div will now take the full width below the image */
+  width: 100%; /* Make it take full available width in the column */
+  max-width: 700px; /* Optional: Set a max-width for readability on very wide screens */
+  color: #fff;
+  text-align: left; /* Ensure text is left-aligned within this div */
+}
+
+/* New: Styles for the wrapper containing "About Me" title and "Designing Is My Passion" */
+.about .about-details .right .title-and-passion {
+  margin-bottom: 20px; /* Space below this block before the main paragraph */
+}
+
+/* Styles for the "About Me" title */
+.about .about-details .right .title {
+  margin-bottom: 10px; /* Space between "About Me" and "Designing Is My Passion" */
+  /* Remove text-align: center if it was here, ensure it's left-aligned */
+}
+
+.about .about-details .right .title span {
+  font-size: 30px;
+  font-weight: 700;
+  background-color: #0ef; /* Blue background */
+  color: #1f242d; /* Dark text on blue background */
+  padding: 5px 15px; /* Padding inside the blue background */
+  border-radius: 5px; /* Rounded corners for the blue background */
+  display: inline-block; /* Essential for padding/background to work correctly */
+}
+
+/* Styles for "Designing Is My Passion" */
+.about .about-details .right .topic {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0ef;
+}
+
+.about .about-details .right p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.about .about-details .right .button {
+  text-align: left; /* Ensure the button is left-aligned */
+}
+
+.about .about-details .right .button button {
+  padding: 10px 25px;
+  background-color: #0ef;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #1f242d;
+  transition: 0.4s;
+}
+
+.about .about-details .right .button button:hover {
+  background: transparent;
+  color: #0ef;
+  border: 2px solid #0ef;
+}
+
+/* SKILLS SECTION */
+.skills {
+  padding: 60px 10%; /* Keep current padding */
+  text-align: center; /* This centers the "My Skills" title */
+  /* Remove any explicit width/max-width from .skills if set, let it be fluid */
+}
+
+.skills .title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0ef;
+  margin-bottom: 40px; /* Space below the section title */
+}
+
+/* Ensure the .content div within .skills takes up full width and centers its content */
+.skills .content {
+  width: 100%; /* Make sure it takes up the full width of its parent (.skills) */
+  max-width: 1200px; /* Optional: Set a max-width for the entire content area */
+  margin: 0 auto; /* This will center the .content div if a max-width is applied */
+  display: flex; /* Make it a flex container */
+  flex-direction: column; /* Stack children (title and skills-details) vertically */
+  align-items: center; /* Center children horizontally */
+}
+
+.skills-details {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center; /* This centers the 'text' and 'boxes' children */
+  align-items: flex-start; /* Aligns them to the top if heights differ */
+  width: 100%; /* Important: Make skills-details take full width of its parent (.content) */
+  max-width: 1200px; /* Optional: Apply a max-width here if you want to limit the overall section width */
+  margin: 0 auto; /* This will center the skills-details container itself if max-width is set */
+}
+
+.skills-details .text {
+  flex: 1;
+  min-width: 300px; /* Minimum width for the text block */
+  max-width: 500px; /* Adjusted max-width for the text block - adjust as needed */
+  text-align: center; /* Center the text content within this div */
+  /* margin-bottom should be handled by the gap on larger screens, but for smaller, media query needed */
+}
+
+.skills-details .text .topic {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0ef;
+  margin-bottom: 15px;
+}
+
+.skills-details .text p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.skills-details .experience {
+  display: flex;
+  justify-content: center; /* Center the "Years of Experience" block */
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.skills-details .experience .num {
+  font-size: 36px;
+  font-weight: bold;
+  color: #0ef;
+}
+
+.skills-details .experience .exp {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.skills-details .boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex: 2; /* Allows it to take more space than the text if available */
+  justify-content: center; /* Center the individual skill boxes */
+  align-items: center;
+  max-width: 700px; /* Adjusted max-width for the skill boxes container - adjust as needed */
+}
+
+.skills-details .box {
+  background: #323946;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1 1 180px; /* Allows boxes to grow and shrink, min-width 180px, slightly smaller */
+  max-width: 200px; /* Explicit max-width for individual boxes */
+  box-sizing: border-box; /* Include padding in the width calculation */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skills-details .box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px #0ef;
+}
+
+.skills-details .box .topic {
+  font-size: 18px;
+  color: #0ef;
+  margin-bottom: 10px;
+}
+
+.skills-details .box .per {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  /* ... (your existing responsive styles for nav, main-container, about) ... */
+
+  .skills .content {
+    align-items: center; /* Ensure content is centered on mobile */
+  }
+
+  .skills-details {
+    flex-direction: column; /* Stack text and boxes vertically */
+    align-items: center; /* Center them horizontally when stacked */
+    gap: 30px; /* Adjust gap for vertical stacking */
+    width: 100%; /* Ensure it takes full width on mobile */
+    padding: 0 5%; /* Add some horizontal padding for mobile */
+  }
+
+  .skills-details .text {
+    width: 100%; /* Take full width on small screens */
+    max-width: none; /* Remove max-width on small screens */
+    margin-bottom: 20px; /* Add spacing between text and boxes on mobile */
+  }
+
+  .skills-details .boxes {
+    width: 100%; /* Take full width on small screens */
+    max-width: none; /* Remove max-width on small screens */
+    justify-content: center; /* Ensure boxes are centered in the column */
+  }
+
+  .skills-details .box {
+    flex: 1 1 120px; /* Adjust flex basis for even smaller screens */
+    max-width: 150px; /* Adjust max-width for individual boxes if needed */
+  }
+}
+
+/* SERVICES SECTION */
+.Service {
+  padding: 100px 30%; /* Keep your existing padding */
+  text-align: center; /* This will center the "My Services" title */
+  /* If you want to limit the overall width of the section content, add a max-width and margin: auto; */
+  /* max-width: 1200px; /* Optional: Adjust as needed */
+  /* margin: 0 auto; /* Optional: Center the entire section if max-width is set */
+}
+
+.Service .title {
+  font-size: 28px; /* Assuming this is your standard title size */
+  font-weight: 700;
+  color: #0ef;
+  margin-bottom: 40px; /* Space below the section title */
+}
+
+.Service .boxes {
+  display: grid;
+  /* Use auto-fit to allow columns to adjust, and minmax for fluid sizing */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  ); /* Adjusted minmax for slightly larger boxes if needed */
+  gap: 20px;
+  margin-top: 40px; /* Space above the grid of boxes */
+  justify-content: center; /* Important: This is the key for centering grid items */
+  /* If you want to center the entire grid as a block, use width and margin auto */
+  max-width: 1200px; /* Optional: Limits the width of the grid itself */
+  margin-left: auto; /* Centers the grid if max-width is set */
+  margin-right: auto; /* Centers the grid if max-width is set */
+}
+
+.Service .box {
+  background: #323946;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  text-align: left; /* Keep text aligned left within the box for readability */
+}
+
+.Service .box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 15px #0ef;
+}
+
+.Service .icon {
+  font-size: 30px;
+  color: #0ef;
+  margin-bottom: 10px;
+}
+
+.Service .topic {
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 20px; /* Ensure topic size is appropriate */
+}
+
+.Service .box p {
+  font-size: 15px; /* Adjust paragraph font size for readability */
+  line-height: 1.6;
+}
+
+/* RESPONSIVE Adjustments for Services Section */
+@media (max-width: 768px) {
+  .Service {
+    padding: 40px 5%; /* Adjust padding for smaller screens */
+  }
+
+  .Service .boxes {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    ); /* Adjust minmax for smaller screens */
+    gap: 15px; /* Reduce gap on smaller screens */
+    margin-top: 25px; /* Adjust top margin for mobile */
+    max-width: none; /* Remove max-width on mobile to allow full width */
+  }
+
+  .Service .box {
+    padding: 15px; /* Reduce padding inside boxes on mobile */
+  }
+}
+/* CONTACT */
+.contact {
+  padding: 60px 30%;
+  text-align: center;
+}
+
+.contact .topic {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0ef;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  margin-bottom: 20px;
+}
+
+.contact .button button {
+  background: #0ef;
+  color: #1f242d;
+  padding: 12px 30px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.contact .button button:hover {
+  background: transparent;
+  color: #0ef;
+  border: 2px solid #0ef;
+}
+
+/* ANIMATIONS */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  /* Hide desktop navigation links */
+  nav .links {
+    display: none;
+  }
+
+  /* Show hamburger icon */
+  .hamburg {
+    display: block;
+  }
+
+  /* Adjust dropdown menu styling for mobile */
+  .dropdwon {
+    position: static;
+    background: #1f242d;
+    box-shadow: none;
+    text-align: right;
+  }
+
+  .dropdwon .links {
+    padding-right: 5%;
+    align-items: flex-end;
+  }
+
+  .main-container,
+  .about,
+  .skills-details {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .main-container .image,
+  .about img {
+    margin-bottom: 20px;
+  }
+
+  .skills-details .text {
+    margin-bottom: 30px;
+  }
+}

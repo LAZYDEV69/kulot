@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Responsive Portfolio Website</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <span>Pat</span>
+      </div>
+
+      <div class="links">
+        <div class="link"><a href="#home">Home</a></div>
+        <div class="link"><a href="#about">About</a></div>
+        <div class="link"><a href="#skills">Skills</a></div>
+        <div class="link"><a href="#contact">Contact</a></div>
+      </div>
+
+      <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+
+      <div class="dropdwon">
+        <div class="links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <section id="home">
+      <div class="main-container">
+        <div class="image">
+          <img src="main.png" alt="Pat's Profile Image" />
+        </div>
+        <div class="content">
+          <h1>
+            Hey I'm
+            <span>Pat</span>
+          </h1>
+          <p>
+            Hi! I'm Patricia Nuylan, I'm 20 years old and currently exploring
+            the world of web development. I enjoy learning new things—especially
+            when it comes to technology and creativity. This page is part of my
+            journey, where I try out code, share projects, and improve my skills
+            little by little. Feel free to look around and see what I’ve been
+            working on!
+          </p>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/_ptrcnyln/"
+              ><i class="fa-brands fa-square-instagram"></i
+            ></a>
+            <a href="https://www.facebook.com/patricia.nuylan.3"
+              ><i class="fa-brands fa-square-facebook"></i
+            ></a>
+            <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+          </div>
+          <div class="btn">
+            <button>Start Here</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="content">
+        <div class="about-details">
+          <div class="left">
+            <img src="main.png" alt="About Me Image" />
+          </div>
+          <div class="right">
+            <div class="title-and-passion">
+              <div class="title"><span>About Me</span></div>
+              <div class="topic">Designing Is My Passion</div>
+            </div>
+            <p>
+              Feel free to explore the page and take a look at some of my work,
+              ideas, and experiences. Every section of this site was built with
+              care, creativity, and a piece of who I am as a learner and
+              designer. I believe that design is a continuous process — one that
+              grows through every mistake, challenge, and success. So whether
+              you're here out of curiosity, interest, or support, I'm truly
+              grateful that you're taking the time to see what I’ve created.
+              Once again, welcome — and I hope you enjoy exploring my website. —
+              Patricia Nuylan
+            </p>
+            <div class="button">
+              <button>Download CV</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills" id="skills">
+      <div class="content">
+        <div class="title"><span>My Skills</span></div>
+        <div class="skills-details">
+          <div class="text">
+            <div class="topic">Skills Reflect Our Knowledge</div>
+            <p data-aos="fade-right">
+              Skills reflect our knowledge — they are the visible proof of what
+              we’ve learned and how far we’ve grown. For me, every skill I’ve
+              developed is a product of time, effort, and the willingness to
+              learn from both successes and failures. Whether it's through
+              hands-on experience, academic training, or personal passion
+              projects, I believe that growth happens when we keep challenging
+              ourselves to improve. This page showcases not just what I can do,
+              but the journey that brought me here — a reflection of the
+              knowledge I’ve gained and continue to build on. I’m excited to
+              keep learning, keep creating, and keep growing — one skill at a
+              time.
+            </p>
+            <div class="experience">
+              <div class="num">2</div>
+              <div class="exp">Years Of <br />Experience</div>
+            </div>
+          </div>
+          <div class="boxes">
+            <div class="box">
+              <div class="topic">HTML</div>
+              <div class="per">50%</div>
+            </div>
+            <div class="box">
+              <div class="topic">CSS</div>
+              <div class="per">50%</div>
+            </div>
+            <div class="box">
+              <div class="topic">JavaScript</div>
+              <div class="per">60%</div>
+            </div>
+            <div class="box">
+              <div class="topic">PHP</div>
+              <div class="per">50%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Service" id="services">
+      <div class="content">
+        <div class="title"><span>My Services</span></div>
+        <div class="boxes">
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-desktop"></i>
+            </div>
+            <div class="topic">Web Development</div>
+            <p>
+              I specialize in creating responsive, functional, and visually
+              appealing websites using HTML, CSS, and JavaScript. This site
+              showcases my skills and growth in web development.
+            </p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <div class="topic">Graphic Design</div>
+            <p>
+              Graphic design is my creative outlet for bringing ideas to life
+              through visuals. I specialize in creating designs that are clear,
+              meaningful, and visually engaging — from digital layouts to
+              branding elements. This website showcases my style, skills, and
+              passion for design.
+            </p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="topic">Digital Marketing</div>
+            <p>
+              My focus is on crafting compelling online messages and optimizing
+              digital presence through core content creation and social media
+              management techniques. This portfolio highlights my developing
+              skills and passion for digital marketing.
+            </p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-android"></i>
+            </div>
+            <div class="topic">App Development</div>
+            <p>
+              I'm learning to build functional, intuitive, and engaging mobile
+              applications using fundamental coding languages and development
+              principles. This site showcases my early projects and exciting
+              growth in app development.
+            </p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-camera-retro"></i>
+            </div>
+            <div class="topic">Photography</div>
+            <p>
+              I'm exploring the art of capturing compelling moments and visually
+              engaging stories through my lens, focusing on fundamental
+              composition and lighting. This site showcases my nascent portfolio
+              and ongoing growth in photography.
+            </p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-tablet-alt"></i>
+            </div>
+            <div class="topic">UI/UX Design</div>
+            <p>
+              I'm exploring the art of designing clear, intuitive, and visually
+              effective icons, focusing on fundamental design principles and
+              vector tools. This site showcases my early projects and ongoing
+              learning in icon design.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="content">
+        <div class="title">
+          <span>Contact Me</span>
+        </div>
+        <div class="text">
+          <div class="topic">Have any question?</div>
+          <p>
+            Currently upgrading my digital space as I hone new skills! Fresh
+            look and content coming soon. Thanks for dropping by!
+          </p>
+          <div class="button">
+            <button>Thank You!</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function hamburg() {
+        const dropdown = document.querySelector(".dropdwon");
+        dropdown.style.display =
+          dropdown.style.display === "block" ? "none" : "block";
+      }
+    </script>
+  </body>
+</html>
